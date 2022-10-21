@@ -1,0 +1,4 @@
+repository "AStarTestDZ@DanielZach@cloud"
+  path "/"
+    br "/main"
+    co "/main"
