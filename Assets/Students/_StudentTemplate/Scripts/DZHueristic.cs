@@ -5,8 +5,10 @@ using UnityEngine;
 public class DZHueristic : HueristicScript
 {
     public GridScript gridScript;
-    public float k =-3f;
-    public float b =0.1f;
+
+    //parameter to define a straight line
+    public float k =-1f;
+    
    
     // Start is called before the first frame update
     void Start()
@@ -28,27 +30,16 @@ public class DZHueristic : HueristicScript
         pos = gridScript.GetGrid();
         float cost = gridScript.GetMovementCost(pos[x, y]);
 
-        float hueVal = k * cost + b;
+
+        //cal the return value based on importance of cost
+        float hueVal = k * cost ;
 
 
 
         return hueVal;
     }
     
-    /*
-    public  float Hueristic(int x, int y) 
-    {
-        GameObject[,] pos;
-        pos = gridScript.GetGrid();
-        float cost= gridScript.GetMovementCost(pos[x, y]);
-
-        float hueVal = k * cost + b;
-
-
-
-            return hueVal;
-    }
-    */
+    
 
 
 }
